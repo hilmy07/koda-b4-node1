@@ -11,7 +11,6 @@ const moveMusic = async () => {
       const artist = artistRow.trim();
       const folder = path.join(dest, artist);
 
-      // buat folder artist kalau belum ada
       await fs.mkdir(folder, { recursive: true });
 
       const filename = `${music[i]}.mp3`;
@@ -34,3 +33,4 @@ const moveMusic = async () => {
 };
 
 export default moveMusic;
+
