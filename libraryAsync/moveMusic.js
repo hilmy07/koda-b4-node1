@@ -19,13 +19,10 @@ const moveMusic = async () => {
       const targetPath = path.join(folder, filename);
 
       try {
-        // cek file exist dulu
         await fs.access(sourcePath);
-        // kalau ada -> pindahkan
         await fs.rename(sourcePath, targetPath);
         console.log(`Moved: ${filename} -> ${folder}`);
       } catch {
-        // kalau file tidak ada, skip
         console.log(`Skip (not found): ${filename}`);
       }
     }
